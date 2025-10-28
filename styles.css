@@ -284,7 +284,7 @@ body {
 
     /* Hero Section Adjustments for Mobile */
     .hero {
-        height: 40vh; /* Set max height to take up 60% of the viewport height */
+        height: auto; /* Set max height to take up 60% of the viewport height */
         
         margin-bottom: 10px; /* Adjust margin to reduce white space */
     }
