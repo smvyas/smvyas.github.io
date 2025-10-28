@@ -18,7 +18,16 @@
           <img src="images/CMU-red-600x600.png" alt="CMU-logo" class="logo-img">
         </a>
       </div>
-      <ul class="nav-links">
+
+<!-- Hamburger Menu Icon -->
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+     <!-- Navigation Links -->
+    <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="research.html">Research</a></li>
         <li><a href="members.html">Members</a></li>
@@ -26,15 +35,8 @@
         <li><a href="mentorship.html">Mentorship</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <!-- Hamburger Menu Icon -->
-      <div class="hamburger" id="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
     </nav>
-  </header>
-  
+  </header>  
   
   <!-- Hero Section (Big Picture) -->
   <section class="hero">
@@ -50,7 +52,7 @@
     <div class="news-item">
       <h3>New lab members!</h3>
       <p><strong>Posted:</strong> October 27, 2025</p>
-      <p>We are thrilled to welcome Krystal Luo and Shaoyi Liu to the lab as Master's students in Biomedical Engineering (research track).</p>
+      <p>We are thrilled to welcome Krystal Luo and Shaoyi Liu to the lab as Master's students in Biomedical Engineering (research track). Learn about them and their interests on the <a href="members.html">Members</a> page</p>
     </div>
     <div class="news-item">
       <h3>Logic website is live!</h3>
@@ -64,7 +66,14 @@
           <p>&copy; 2025 Carnegie Mellon University</p>
      </footer>
 
-  <!-- Optional: Scripts -->
-  <script src="scripts.js"></script> <!-- If you have any JS -->
+<!-- Optional: Scripts -->
+  <script>
+    // JavaScript to toggle the menu visibility
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.classList.toggle('active');  // Toggle the active class on the nav links
+    }
+  </script>
+
 </body>
 </html>
