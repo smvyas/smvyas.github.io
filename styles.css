@@ -31,6 +31,7 @@ body {
   max-height: 150px; /* Adjusts the max height to ensure it's not too tall */
 }
 
+/* Navigation Links (Desktop) */
 .nav-links {
   list-style-type: none;
   display: flex;
@@ -44,82 +45,95 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: white;
+  color: white;  /* White text color */
   font-size: 1.2em;
   font-weight: bold;
+  padding: 10px;
+  display: block;
 }
 
 .nav-links a:hover {
-  color: #f5f5f5;
+  color: #f5f5f5; /* Light gray on hover */
 }
 
-/* Initially hide the nav links and disable pointer events */
-.nav-links {
-  display: none;
-  pointer-events: none; /* Prevent clicking when menu is hidden */
-}
-
-/* When the menu is active, show the links and enable pointer events */
-.nav-links.active {
-  display: flex;
-  pointer-events: all; /* Enable clicking when menu is visible */
-}
-
-.hamburger {
-  display: none;  /* Hidden by default */
-  cursor: pointer;
-  flex-direction: column;
-  gap: 5px;
-  z-index: 2;  /* Ensure it's on top of the nav */
-}
-
-.hamburger .bar {
-  width: 30px;
-  height: 4px;
-  background-color: white;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;  /* Show hamburger on mobile */
-  }
-
+/* Mobile View (Hamburger menu and links hidden by default) */
+@media (max-width: 875px) {
   .nav-links {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: #C41230;
-    position: absolute;
-    top: auto;  /* Adjust based on your navbar height */
+    display: none;               /* Hide links by default */
+    position: absolute;          /* Position links absolutely below the navbar */
+    top: 10px;                    /* Adjust this based on your navbar height */
     left: 0;
-    text-align: center;
-    z-index: 1;  /* Ensure it's behind the hamburger */
+    width: 100%;
+    background-color: #C41230;    /* Scarlet red background for dropdown */
+    flex-direction: column;
+    align-items: center;
     padding-top: 10px;
-    height: auto; /* Initially, set the height to 0 (hidden state) */
-    overflow: hidden; /* Prevents any content overflow when collapsed */
-    opacity: 0; /* Set the initial opacity to 0 */
-    transition: height 0.6s ease, opacity 0.6s ease; /* Transition the height and opacity */
+    opacity: 0;                   /* Links are invisible initially */
+    transition: opacity 0.5s ease;  /* Smooth transition for opacity */
+    pointer-events: none;         /* Prevent clicking when hidden */
   }
 
   /* Active state: when the hamburger is clicked */
   .nav-links.active {
-    height: 150px; /* Adjust based on how much space your links need */
-    opacity: 1; /* Fade in the links */
+    display: flex;
+    opacity: 1;                   /* Show links */
+    pointer-events: all;          /* Enable clicking when visible */
+  }
+
+
+  .hamburger {
+    display: flex;                /* Ensure hamburger is visible */
+    cursor: pointer;
+    z-index: 2;                   /* Make sure it appears above links */
+    flex-direction: column;       /* Stack the bars vertically */
+    gap: 5px;                     /* Add space between bars */
+  }
+
+  .hamburger .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+    transition: 0.3s;
   }
 
   /* Ensure the links stay white even in the active state */
   .nav-links.active a {
-    color: white;  /* Explicitly set the text color to white */
+    color: white;
   }
 
-/* Ensure the links stay white when hovered, even in active state */
+  /* Ensure the links stay white when hovered, even in active state */
   .nav-links.active a:hover {
-    color: #f5f5f5; /* Lighter color when hovered */
+    color: #f5f5f5;
   }
 }
+
+/* Desktop View (Hamburger is hidden, links are always visible) */
+@media (min-width: 875px) {
+  .nav-links {
+    display: flex;  /* Display links in a row for desktop */
+    justify-content: space-between;
+    align-items: center;
+    width: auto;  /* Ensure links span across navbar */
+    opacity: 1;  /* Make sure links are visible */
+    position: static;  /* Remove absolute positioning */
+    pointer-events: all;  /* Enable clicking by default */
+  }
+
+  .nav-links a {
+    color: white;  /* White text for desktop links */
+  }
+
+  .nav-links a:hover {
+    color: #f5f5f5; /* Light gray on hover */
+  }
+
+  .hamburger {
+    display: none;  /* Hide the hamburger on desktop */
+  }
+}
+
+
 
 
 
@@ -144,18 +158,6 @@ a {
 a:hover {
   color: #cc0000; /* Darker red for hover effect */
   text-decoration: underline; /* Adds underline on hover for better visibility */
-}
-
-/* Navigation Links */
-.nav-links a {
-  color: #990000; /* Scarlet red */
-  padding: 10px;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  color: #cc0000;
-  text-decoration: underline;
 }
 
 
@@ -437,20 +439,26 @@ body {
     flex-direction: column;  /* Change flex direction to column */
     align-items: center;     /* Center the content */
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
-/* Research Image */
+/* Image Container */
 .research-img {
-    width: 100%; 
-    max-width: 400px; /* Limit the image's max width */
-    margin-bottom: 20px; /* Space between the image and the text */
+    flex: 1;
+    display: flex;              /* Enable flexbox */
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically */
+    padding-right: 20px;
+    width: 100%;                 /* Ensure it takes full width of its container */
+    height: auto;                /* Maintain the aspect ratio of the image */
+    margin-bottom: 20px;         /* Space at the bottom of the image */
 }
 
 .research-img img {
-    width: 100%; /* Make the image responsive */
-    height: auto;
-    border-radius: 8px; /* Optional: rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better appearance */
+    max-width: 100%;             /* Ensure the image doesn't overflow */
+    height: auto;                /* Maintain aspect ratio */
+    object-fit: cover;           /* Cover the container without distorting the image */
+    border-radius: 8px;          /* Optional: for rounded corners */
 }
 
 /* Research Text */
@@ -473,20 +481,24 @@ body {
     margin-bottom: 20px;
 }
 
-/* Mobile View */
+/* Mobile View Adjustments */
 @media (max-width: 768px) {
+
+    /* Stack content on smaller screens */
     .research-section {
-        flex-direction: column; /* Ensure image is on top, text below on small screens */
+        flex-direction: column;   /* Stack the image and text vertically */
+        align-items: center;      /* Center everything */
     }
 
     .research-img {
-        max-width: 100%; /* Ensure the image fits within the screen */
-        margin-bottom: 20px;
+        width: 100%;               /* Ensure the image container takes full width */
+        padding-right: 0;          /* Remove right padding on mobile */
+        margin-bottom: 20px;       /* Add margin between image and text */
     }
 
-    .research-text {
-        text-align: center;
-        width: 100%;
+    .research-img img {
+        width: 100%;               /* Ensure the image takes up full width */
+        max-width: 100%;           /* Prevent it from exceeding the container width */
     }
 }
 
