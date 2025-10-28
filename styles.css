@@ -57,7 +57,7 @@ body {
 }
 
 /* Mobile View (Hamburger menu and links hidden by default) */
-@media (max-width: 875px) {
+@media (max-width: 1169px) {
   .nav-links {
     display: none;               /* Hide links by default */
     position: absolute;          /* Position links absolutely below the navbar */
@@ -109,7 +109,7 @@ body {
 }
 
 /* Desktop View (Hamburger is hidden, links are always visible) */
-@media (min-width: 875px) {
+@media (min-width: 1170px) {
   .nav-links {
     display: flex;  /* Display links in a row for desktop */
     justify-content: space-between;
