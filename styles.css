@@ -21,6 +21,44 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 4px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Mobile view: show the hamburger menu */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;  /* Hide the navigation links by default */
+    flex-direction: column;
+    width: 100%;
+    background-color: #C41230; /* Match background color to navbar */
+    position: absolute;
+    top: 60px;  /* Adjust based on your navbar height */
+    left: 0;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;  /* Show navigation when the hamburger is clicked */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger menu on mobile */
+  }
+}
+
+
 /* Footer Links */
 footer a {
   color: #990000; /* Scarlet red */
