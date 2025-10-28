@@ -1,2 +1,2 @@
-# smvyas.github.io
+# logic.github.io
 professional website for self
