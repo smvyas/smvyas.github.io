@@ -475,6 +475,7 @@ body {
 }
 
 .research-text p {
+    text-align: left;
     font-size: 1.2em;
     line-height: 1.6;
     color: #333;
