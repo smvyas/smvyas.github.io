@@ -277,6 +277,13 @@ body {
   text-decoration: underline;
 }
 
+.news-image {
+  max-width: 50%;
+  height: auto;
+  margin: 10px 0;
+  border-radius: 6px;
+}
+
 
 
 /* Mobile View Adjustments */
