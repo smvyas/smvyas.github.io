@@ -278,11 +278,21 @@ body {
 }
 
 .news-image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  /* Use a 'best guess' ratio or a minimum height */
+  aspect-ratio: auto 4 / 3; 
+  min-height: 200px; /* Prevents the 'collapsed' 0px state */
+  
+  /* Standard styles */
+  object-fit: cover;
   margin: 10px 0;
   border-radius: 6px;
+  display: block;
+  background-color: #f5f5f5; /* Shows a light grey box until image arrives */
 }
+
+
 
 
 
