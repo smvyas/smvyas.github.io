@@ -549,19 +549,26 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Member Image */
+/* Member Image Container */
 .member-img {
   width: 100%;
-  max-width: 300px; /* Limit max width of the image */
-  margin-bottom: 20px; /* Add space between the image and the text */
+  max-width: 250px;
+  /* Keeps all photos perfectly square */
+  aspect-ratio: 1 / 1; 
+  margin-bottom: 20px;
 }
 
+/* Member Image */
 .member-img img {
   width: 100%;
-  height: auto;
-  border-radius: 20px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* Controls the rounded corners (adjust 20px up or down as desired) */
+  border-radius: 20px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Member Info */
 .member-info {
