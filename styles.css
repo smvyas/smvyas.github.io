@@ -294,32 +294,25 @@ body {
   background-color: #f5f5f5; /* Shows a light grey box until image arrives */
 }
 
-/* 3x3 Image Grid Container */
-.image-grid-3x3 {
+/* 2x4 Image Grid Container */
+.image-grid-2x4 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: 10px;                              /* Space between photos */
-  max-width: 600px;                       /* Match your existing width limit */
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  gap: 10px;                             /* Space between photos */
+  max-width: 600px;                      /* Matches your maximum width cap */
   width: 100%;
   margin: 15px 0;
 }
 
 /* Individual Grid Images */
-.image-grid-3x3 img {
+.image-grid-2x4 img {
   width: 100%;
   height: 100%;
-  aspect-ratio: 1 / 1;                   /* Keeps all thumbnails square */
-  object-fit: cover;                     /* Prevents distortion */
+  aspect-ratio: 1 / 1;                  /* Keeps thumbnails square */
+  object-fit: cover;                    /* Cuts off overflow without stretching */
   border-radius: 6px;
   background-color: #f5f5f5;
   display: block;
-}
-
-/* Optional: Switch to 2 columns on small screens if 3 columns get too small */
-@media (max-width: 480px) {
-  .image-grid-3x3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 
